@@ -1,0 +1,69 @@
+:root {
+  /* Fundos OLED Escuros iOS 18 */
+  --bg-primary: #08090d;
+  --bg-secondary: #0d0f17;
+  --bg-mesh-1: rgba(0, 240, 255, 0.08);
+  --bg-mesh-2: rgba(168, 85, 247, 0.06);
+
+  /* Superfícies de Vidro Apple */
+  --surface-glass: rgba(255, 255, 255, 0.04);
+  --surface-glass-card: rgba(255, 255, 255, 0.035);
+  --surface-glass-hover: rgba(255, 255, 255, 0.07);
+  --surface-glass-active: rgba(255, 255, 255, 0.1);
+  --surface-glass-island: rgba(15, 17, 25, 0.75);
+
+  /* Bordas & Realces Especulares */
+  --border-hairline: rgba(255, 255, 255, 0.1);
+  --border-glass-card: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.22);
+
+  /* Cores de Tipografia */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.42);
+  --text-muted: rgba(255, 255, 255, 0.25);
+
+  /* Temas de Cor (Tint) iOS 18 */
+  --tint-cyan: #00F0FF;
+  --tint-cyan-glow: rgba(0, 240, 255, 0.35);
+
+  --tint-violet: #A855F7;
+  --tint-violet-glow: rgba(168, 85, 247, 0.35);
+
+  --tint-emerald: #10B981;
+  --tint-emerald-glow: rgba(16, 185, 129, 0.35);
+
+  --tint-orange: #F97316;
+  --tint-orange-glow: rgba(249, 115, 22, 0.35);
+
+  --tint-gold: #F59E0B;
+  --tint-gold-glow: rgba(245, 158, 11, 0.35);
+
+  /* Tint Ativo Atual (Padrão: Ciano) */
+  --tint-color: var(--tint-cyan);
+  --tint-glow: var(--tint-cyan-glow);
+  --tint-subtle: rgba(0, 240, 255, 0.12);
+
+  /* Tipografia Apple */
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  /* Squircles & Raios de Borda */
+  --radius-pill: 9999px;
+  --radius-squircle: 28px;
+  --radius-card: 24px;
+  --radius-sm: 14px;
+  --radius-xs: 8px;
+
+  /* Sombras & Profundidade */
+  --shadow-island: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-hairline);
+  --shadow-card: 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --shadow-card-hover: 0 24px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--tint-glow), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  /* Temporizadores de Movimento & Spring */
+  --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--spring-smooth);
+  --transition-medium: 0.35s var(--spring-smooth);
+  --transition-bounce: 0.5s var(--spring-bounce);
+}

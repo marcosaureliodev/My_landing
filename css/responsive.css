@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Adaptações Responsivas & Breakpoints
+   ========================================================================== */
+
+/* Tablets Grandes & Notebooks Pequenos (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-metrics {
+    justify-content: center;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .widget-span-8 { grid-column: span 6; }
+  .widget-span-4 { grid-column: span 6; }
+  .widget-span-6 { grid-column: span 6; }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .control-center-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Tablets & Celulares Grandes (<= 768px) */
+@media (max-width: 768px) {
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding-top: 6.5rem;
+  }
+
+  .dynamic-island {
+    min-width: 290px;
+    height: 44px;
+  }
+
+  .dynamic-island.island-expanded {
+    min-width: 90vw;
+  }
+
+  .hero-portrait-frame {
+    width: 300px;
+    height: 380px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-buttons-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+/* Telas Mobile Pequenas (<= 480px) */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-apple-primary, .btn-apple-glass {
+    width: 100%;
+  }
+
+  .hero-metrics {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-portrait-frame {
+    width: 260px;
+    height: 330px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .widget-span-8, .widget-span-4, .widget-span-6, .widget-span-12 {
+    grid-column: span 1;
+  }
+
+  .dynamic-island {
+    min-width: 260px;
+  }
+
+  .terminal-tabs {
+    display: none;
+  }
+}
