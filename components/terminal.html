@@ -1,0 +1,93 @@
+<!-- Seção de Terminal macOS Interativo -->
+<section id="terminal" class="terminal-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag">Dev Console</span>
+      <h2 class="section-title">Código como Forma de Arte</h2>
+      <p class="section-desc">Estruturas modulares, tipos estritos e padrões expressivos diretamente da IDE.</p>
+    </div>
+
+    <div class="terminal-window glass-surface">
+      <div class="terminal-titlebar">
+        <div class="terminal-controls">
+          <span class="terminal-dot close"></span>
+          <span class="terminal-dot minimize"></span>
+          <span class="terminal-dot expand"></span>
+        </div>
+        <div class="terminal-tabs">
+          <div class="terminal-tab active" data-tab="engineer">engineer.ts</div>
+          <div class="terminal-tab" data-tab="architecture">architecture.json</div>
+          <div class="terminal-tab" data-tab="benchmark">benchmark.sh</div>
+        </div>
+        <div class="terminal-actions">
+          <button id="terminalCopyBtn" class="terminal-copy-btn" aria-label="Copiar código do terminal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copiar Snippet</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="terminal-code-body">
+
+        <!-- Aba 1: engineer.ts -->
+        <pre id="tabContent-engineer" class="terminal-code active"><code><span class="syn-kw">interface</span> <span class="syn-type">SoftwareEngineer</span> {
+    <span class="syn-prop">name</span>: <span class="syn-type">string</span>;
+    <span class="syn-prop">role</span>: <span class="syn-type">string</span>;
+    <span class="syn-prop">specialties</span>: <span class="syn-type">string</span>[];
+    <span class="syn-prop">executeTask</span>(<span class="syn-prop">task</span>: <span class="syn-type">EngineeringGoal</span>): <span class="syn-type">Promise</span>&lt;<span class="syn-type">ProductionReadyService</span>&gt;;
+  }
+  
+  <span class="syn-kw">export class</span> <span class="syn-type">Marcos_Aurélio</span> <span class="syn-kw">implements</span> <span class="syn-type">SoftwareEngineer</span> {
+    <span class="syn-kw">public readonly</span> <span class="syn-prop">name</span> = <span class="syn-str">"Marcos Aurélio"</span>;
+    <span class="syn-kw">public readonly</span> <span class="syn-prop">role</span> = <span class="syn-str">"Fullstack & Distributed Systems Engineer"</span>;
+    <span class="syn-kw">public readonly</span> <span class="syn-prop">specialties</span> = [<span class="syn-str">"Clean Architecture"</span>, <span class="syn-str">"High Throughput"</span>, <span class="syn-str">"Zero Downtime"</span>];
+  
+    <span class="syn-kw">async</span> <span class="syn-fn">executeTask</span>(<span class="syn-prop">goal</span>: <span class="syn-type">EngineeringGoal</span>): <span class="syn-type">Promise</span>&lt;<span class="syn-type">ProductionReadyService</span>&gt; {
+      <span class="syn-com">// 1. Análise profunda de requisitos e arquitetura de dados</span>
+      <span class="syn-kw">const</span> spec = <span class="syn-kw">await</span> ArchitecturePlanner.<span class="syn-fn">design</span>(goal);
+      
+      <span class="syn-com">// 2. Ciclo rigoroso de TDD (Test-Driven Development)</span>
+      <span class="syn-kw">await</span> AutomatedTesting.<span class="syn-fn">ensureReliability</span>(spec);
+  
+      <span class="syn-com">// 3. Deploy contínuo resiliente e monitoramento ativo</span>
+      <span class="syn-kw">return</span> DeploymentPipeline.<span class="syn-fn">shipWithObservability</span>(spec);
+    }
+  }</code></pre>
+
+        <!-- Aba 2: architecture.json -->
+        <pre id="tabContent-architecture" class="terminal-code"><code>{
+    <span class="syn-prop">"system"</span>: <span class="syn-str">"Global Distributed Core"</span>,
+    <span class="syn-prop">"version"</span>: <span class="syn-str">"6.4.2"</span>,
+    <span class="syn-prop">"runtime"</span>: <span class="syn-str">"Node.js 22 LTS / Linux Container"</span>,
+    <span class="syn-prop">"clusters"</span>: [
+      { <span class="syn-prop">"region"</span>: <span class="syn-str">"us-east-1"</span>, <span class="syn-prop">"status"</span>: <span class="syn-str">"healthy"</span>, <span class="syn-prop">"latency"</span>: <span class="syn-str">"12ms"</span> },
+      { <span class="syn-prop">"region"</span>: <span class="syn-str">"sa-east-1"</span>, <span class="syn-prop">"status"</span>: <span class="syn-str">"healthy"</span>, <span class="syn-prop">"latency"</span>: <span class="syn-str">"4ms"</span> }
+    ],
+    <span class="syn-prop">"security"</span>: {
+      <span class="syn-prop">"mTLS"</span>: <span class="syn-kw">true</span>,
+      <span class="syn-prop">"jwt_rotation"</span>: <span class="syn-str">"24h"</span>,
+      <span class="syn-prop">"rate_limit"</span>: <span class="syn-str">"10000 req/sec"</span>
+    }
+  }</code></pre>
+
+        <!-- Aba 3: benchmark.sh -->
+        <pre id="tabContent-benchmark" class="terminal-code"><code><span class="syn-com">#!/usr/bin/env bash</span>
+  <span class="syn-fn">echo</span> <span class="syn-str">"== Running Performance Load Stress Test =="</span>
+  k6 run --vus 5000 --duration 60s load-test.js
+  
+  <span class="syn-com"># Results:</span>
+  <span class="syn-prop">Requests</span>: 1,420,000 reqs
+  <span class="syn-prop">Failed</span>: 0 (0.00%)
+  <span class="syn-prop">p95 Latency</span>: 4.8ms
+  <span class="syn-str">✔ Status: PASS - Ready for global deployment</span></code></pre>
+
+      </div>
+    </div>
+
+  </div>
+</section>

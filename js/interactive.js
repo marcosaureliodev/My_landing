@@ -41,6 +41,9 @@
     const cards = document.querySelectorAll('.project-card, .hero-portrait-frame');
 
     cards.forEach(card => {
+      if (card.dataset.tiltInit) return;
+      card.dataset.tiltInit = 'true';
+
       card.addEventListener('mousemove', function (e) {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -62,8 +65,10 @@
 
   // 3. Brilho Ambiente do Cursor
   function initAmbientGlow() {
+    if (window.__ambientGlowInit) return;
     const glow = document.getElementById('ambientGlow');
     if (!glow) return;
+    window.__ambientGlowInit = true;
 
     let targetX = window.innerWidth / 2;
     let targetY = window.innerHeight / 2;
@@ -86,8 +91,12 @@
 
   // 4. Abas do Terminal macOS & Cópia de Código
   function initTerminal() {
-    const tabs = document.querySelectorAll('.terminal-tab');
-    const codes = document.querySelectorAll('.terminal-code');
+    const terminal = document.getElementById('terminal');
+    if (!terminal || terminal.dataset.terminalInit) return;
+    terminal.dataset.terminalInit = 'true';
+
+    const tabs = terminal.querySelectorAll('.terminal-tab');
+    const codes = terminal.querySelectorAll('.terminal-code');
     const copyBtn = document.getElementById('terminalCopyBtn');
 
     tabs.forEach(tab => {
@@ -121,7 +130,8 @@
   // 5. Relógio ao Vivo no Bento Grid
   function initClock() {
     const timeEl = document.getElementById('liveClockTime');
-    if (!timeEl) return;
+    if (!timeEl || timeEl.dataset.clockInit) return;
+    timeEl.dataset.clockInit = 'true';
 
     function updateTime() {
       const now = new Date();
@@ -138,7 +148,8 @@
   // 6. Validação Instantânea do Formulário de Contato & Feedback
   function initContactForm() {
     const form = document.getElementById('contactForm');
-    if (!form) return;
+    if (!form || form.dataset.formInit) return;
+    form.dataset.formInit = 'true';
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -175,7 +186,8 @@
   // 7. Botão Flutuante Voltar ao Topo
   function initBackToTop() {
     const btn = document.getElementById('backToTopBtn');
-    if (!btn) return;
+    if (!btn || btn.dataset.btnInit) return;
+    btn.dataset.btnInit = 'true';
 
     let ticking = false;
 
@@ -206,6 +218,8 @@
     initContactForm();
     initBackToTop();
   }
+
+  window.addEventListener('components:loaded', initAll);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);

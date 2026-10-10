@@ -8,6 +8,8 @@
     const island = document.getElementById('dynamicIsland');
     const closeBtn = document.getElementById('islandCloseBtn');
     if (!island) return;
+    if (island.dataset.islandInitialized) return;
+    island.dataset.islandInitialized = 'true';
 
     let isExpanded = false;
 
@@ -64,6 +66,8 @@
       });
     });
   }
+
+  window.addEventListener('components:loaded', initDynamicIsland);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initDynamicIsland);

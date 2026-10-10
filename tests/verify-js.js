@@ -4,6 +4,7 @@ const vm = require('vm');
 
 const projectRoot = path.resolve(__dirname, '..');
 const files = [
+  'js/components.js',
   'js/theme.js',
   'js/dynamic-island.js',
   'js/interactive.js'

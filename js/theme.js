@@ -83,6 +83,14 @@
 
   window.applyTint = applyTint;
 
+  window.addEventListener('components:loaded', function () {
+    let saved = 'cyan';
+    try {
+      saved = localStorage.getItem(STORAGE_KEY) || 'cyan';
+    } catch (e) {}
+    applyTint(saved);
+  });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initTheme);
   } else {
